@@ -14,6 +14,8 @@ call plug#begin(g:plugged_home)
     Plug 'vim-airline/vim-airline-themes'
     " Better Visual Guide
     Plug 'Yggdroot/indentLine'
+    " Hotkeys
+    Plug 'tpope/vim-unimpaired'
     " Syntax check
     Plug 'w0rp/ale'
     " Completion, documentation, and typification (COC)
@@ -101,7 +103,7 @@ set mouse=a
 set colorcolumn=80
 set cursorline
 set noshowmode
-" set noshowmatch 
+" set noshowmatch
 
 " Behaviours
 set nolazyredraw
@@ -201,7 +203,4 @@ let g:indentLine_fileTypeExclude = ['markdown']
 " Autoformat with F3
 noremap <F3> :Autoformat<CR>
 " Clear search with Ctrl+L
-nmap <silent> <c-l> :noh<CR>
-" Buffer navigation with F7 and F8
-nmap <silent> <F7> :bp<CR>
-nmap <silent> <F8> :bp<CR>
+nmap <silent> <C-L> :noh<CR>

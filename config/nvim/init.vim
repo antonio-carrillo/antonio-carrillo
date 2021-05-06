@@ -204,3 +204,12 @@ let g:indentLine_fileTypeExclude = ['markdown']
 noremap <F3> :Autoformat<CR>
 " Clear search with Ctrl+L
 nmap <silent> <C-L> :noh<CR>
+" Delete on letters
+inoremap <C-L> <Del>
+" Higlight Tags
+augroup HiglightTODO
+    autocmd!
+    autocmd WinEnter,VimEnter * :silent! call matchadd('Todo',
+        \ 'TODO\|FIXME\|DEBUG\|HACK\|TIAH',
+        \ -1)
+augroup END

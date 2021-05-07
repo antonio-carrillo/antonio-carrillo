@@ -191,10 +191,10 @@ highlight SignifySignChange
     \ ctermfg=white ctermbg=yellow
     \ guifg=#ffffff guibg=#aa5500
 " Navigation through hunks
-nmap <leader>gj <plug>(signify-next-hunk)
-nmap <leader>gk <plug>(signify-prev-hunk)
-nmap <leader>gJ 9999<leader>gJ
-nmap <leader>gK 9999<leader>gk
+nmap ]h <plug>(signify-next-hunk)
+nmap [h <plug>(signify-prev-hunk)
+nmap ]H 9999]h
+nmap [H 9999[h
 
 " TIAH
 

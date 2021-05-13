@@ -138,7 +138,7 @@ augroup COC
     nmap <silent> gy <Plug>(coc-type-definition)
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
-    " Use K to show documentation in preview window.
+    " Use <C-K> to show documentation in preview window.
     nnoremap <silent> <C-K> :call <SID>show_documentation()<CR>
     function! s:show_documentation()
         if (index(['vim','help'], &filetype) >= 0)
@@ -175,12 +175,12 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {'python': ['flake8']}
 
 " Git
-" Marks
+"   Marks
 let g:signify_sign_add               = '+'
 let g:signify_sign_delete            = '-'
 let g:signify_sign_delete_first_line = '‾'
 let g:signify_sign_change            = '~'
-" Colors
+"   Colors
 highlight SignifySignAdd
     \ ctermfg=black ctermbg=green
     \ guifg=#000000 guibg=#00ff00
@@ -190,7 +190,7 @@ highlight SignifySignDelete
 highlight SignifySignChange
     \ ctermfg=white ctermbg=yellow
     \ guifg=#ffffff guibg=#aa5500
-" Navigation through hunks
+"   Navigation through hunks
 nmap ]h <plug>(signify-next-hunk)
 nmap [h <plug>(signify-prev-hunk)
 nmap ]H 9999]h
@@ -210,6 +210,14 @@ inoremap <C-L> <Del>
 augroup HiglightTODO
     autocmd!
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo',
-        \ 'TODO\|FIXME\|DEBUG\|HACK\|TIAH',
+        \ 'TODO\|FIXME\|DEBUG\|HACK\|TIAH\|<<<<\|>>>',
         \ -1)
 augroup END
+" Navigation through tabs
+noremap <silent> [t :tabprev<CR>
+noremap <silent> ]t :tabnext<CR>
+noremap <silent> [T :1tabnext<CR>
+noremap <silent> ]T :$tabnext<CR>
+noremap <silent> [<C-T> :-tabmove<CR>
+noremap <silent> ]<C-T> :+tabmove<CR>
+

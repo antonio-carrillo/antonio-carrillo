@@ -210,7 +210,7 @@ inoremap <C-L> <Del>
 augroup HiglightTODO
     autocmd!
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo',
-        \ 'TODO\|FIXME\|DEBUG\|HACK\|TIAH\|<<<<\|>>>',
+        \ 'TODO\|FIXME\|DEBUG\|HACK\|TIAH\|<<<\|>>>',
         \ -1)
 augroup END
 " Navigation through tabs
@@ -221,3 +221,15 @@ noremap <silent> ]T :$tabnext<CR>
 noremap <silent> [<C-T> :-tabmove<CR>
 noremap <silent> ]<C-T> :+tabmove<CR>
 
+" Auto-close quotes and parenthesis
+ino " ""<left>
+ino ' ''<left>
+ino « «»<left>
+ino ` ``<left>
+ino ( ()<left>
+ino [ []<left>
+ino { {}<left>
+ino {<CR> {<CR>}<ESC>O
+
+" Lorem ipsum
+ino /lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

@@ -8,8 +8,10 @@ endif
 "   Pluggins managed with comands started with: Plug
 call plug#begin(g:plugged_home)
     " UI related
+    Plug 'artanikin/vim-synthwave84'
     Plug 'chriskempson/base16-vim'
     Plug 'ghifarit53/tokyonight-vim'
+    Plug 'relastle/bluewery.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     " Better Visual Guide
@@ -58,12 +60,17 @@ if has("gui_running")
 endif
 
 " Colorscheme
+"   Synthwave 84
+let base16colorspace=256
+colorscheme synthwave84
+hi Normal guibg=NONE ctermbg=NONE
+highlight Comment cterm=italic gui=italic
 "   TokyoNight
-let g:tokyonight_style = 'storm'
-let g:tokyonight_enable_italic = 1
-let g:tokyonight_transparent_background = 1
-let g:tokyonight_cursor = 'green'
-colorscheme tokyonight
+" let g:tokyonight_style = 'storm'
+" let g:tokyonight_enable_italic = 1
+" let g:tokyonight_transparent_background = 1
+" let g:tokyonight_cursor = 'green'
+" colorscheme tokyonight
 "   VimAirline
 " let base16colorspace=256
 " colorscheme base16-gruvbox-dark-hard

@@ -41,11 +41,14 @@ call plug#end()
 
 " Tab and indentation
 filetype plugin indent on
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
-    \ softtabstop=4
 set expandtab
 set tabstop=4
 set shiftwidth=4
+
+autocmd Filetype
+    \ python
+    \ setlocal expandtab
+    \ tabstop=4 shiftwidth=4 softtabstop=4
 
 " UI configuration
 syntax on
@@ -160,12 +163,18 @@ augroup COC
     nmap <leader>rn <Plug>(coc-rename)
     " Remap <C-F> and <C-B> for scroll float windows/popups.
     if has('nvim-0.4.0') || has('patch-8.2.0750')
-        nnoremap <silent><nowait><expr> <C-F> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-F>"
-        nnoremap <silent><nowait><expr> <C-B> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-B>"
-        inoremap <silent><nowait><expr> <C-F> coc#float#has_scroll() ? "\<C-R>=coc#float#scroll(1)\<CR>" : "\<Right>"
-        inoremap <silent><nowait><expr> <C-B> coc#float#has_scroll() ? "\<C-R>=coc#float#scroll(0)\<CR>" : "\<Left>"
-        vnoremap <silent><nowait><expr> <C-F> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-F>"
-        vnoremap <silent><nowait><expr> <C-B> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-B>"
+        nnoremap <silent><nowait><expr> <C-F> coc#float#has_scroll() ?
+            \ coc#float#scroll(1) : "\<C-F>"
+        nnoremap <silent><nowait><expr> <C-B> coc#float#has_scroll() ?
+            \ coc#float#scroll(0) : "\<C-B>"
+        inoremap <silent><nowait><expr> <C-F> coc#float#has_scroll() ?
+            \ "\<C-R>=coc#float#scroll(1)\<CR>" : "\<Right>"
+        inoremap <silent><nowait><expr> <C-B> coc#float#has_scroll() ?
+            \ "\<C-R>=coc#float#scroll(0)\<CR>" : "\<Left>"
+        vnoremap <silent><nowait><expr> <C-F> coc#float#has_scroll() ?
+            \ coc#float#scroll(1) : "\<C-F>"
+        vnoremap <silent><nowait><expr> <C-B> coc#float#has_scroll() ?
+            \ coc#float#scroll(0) : "\<C-B>"
     endif
 augroup END
 
@@ -239,4 +248,5 @@ ino { {}<left>
 ino {<CR> {<CR>}<ESC>O
 
 " Lorem ipsum
-ino /lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+ino /lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    \ eiusmod tempor incididunt ut labore et dolore magna aliqua.

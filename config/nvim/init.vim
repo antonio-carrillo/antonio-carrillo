@@ -25,11 +25,17 @@ call plug#begin(g:plugged_home)
     "   For configuration file run the command: :CocConfig
     "   Installed with CocInstall:
     "     coc-jedi
+    "     coc-react-refactor
+    "     coc-tsserver
     " Python
     "   Docstrings
     Plug 'heavenshell/vim-pydocstring', {'do': 'make install'}
     "   PEP8 identation
     Plug 'Vimjas/vim-python-pep8-indent'
+    " JavaScript / TypeScript
+    Plug 'leafgarland/typescript-vim'
+    Plug 'othree/yajs.vim'
+    Plug 'peitalin/vim-jsx-typescript'
     " Formater
     Plug 'Chiel92/vim-autoformat'
     " Git
@@ -46,9 +52,25 @@ set tabstop=4
 set shiftwidth=4
 
 autocmd Filetype
+    \ css,css
+    \ setlocal expandtab
+autocmd Filetype
+    \ html
+    \ setlocal expandtab
+    \ tabstop=2 shiftwidth=2 softtabstop=2
+    \ tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype
+    \ javascript,javascriptreact
+    \ setlocal expandtab
+    \ tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype
     \ python
     \ setlocal expandtab
     \ tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype
+    \ typescript,typescriptreact
+    \ setlocal expandtab
+    \ tabstop=2 shiftwidth=2 softtabstop=2
 
 " UI configuration
 syntax on

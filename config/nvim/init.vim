@@ -50,25 +50,12 @@ filetype plugin indent on
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 
 autocmd Filetype
-    \ css,css
-    \ setlocal expandtab
-autocmd Filetype
-    \ html
-    \ setlocal expandtab
-    \ tabstop=2 shiftwidth=2 softtabstop=2
-    \ tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype
-    \ javascript,javascriptreact
-    \ setlocal expandtab
-    \ tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype
-    \ python
-    \ setlocal expandtab
-    \ tabstop=4 shiftwidth=4 softtabstop=4
-autocmd Filetype
-    \ typescript,typescriptreact
+    \ htm,html,php,css,scss,
+    \javascript,javascriptreact,
+    \typescript,typescriptreact
     \ setlocal expandtab
     \ tabstop=2 shiftwidth=2 softtabstop=2
 
@@ -260,14 +247,17 @@ noremap <silent> [<C-T> :-tabmove<CR>
 noremap <silent> ]<C-T> :+tabmove<CR>
 
 " Auto-close quotes and parenthesis
-ino " ""<left>
-ino ' ''<left>
-ino « «»<left>
-ino ` ``<left>
-ino ( ()<left>
-ino [ []<left>
-ino { {}<left>
-ino {<CR> {<CR>}<ESC>O
+ino <leader>" ""<left>
+ino <leader>' ''<left>
+ino <leader>« «»<left>
+ino <leader>` ``<left>
+ino <leader>( ()<left>
+ino <leader>[ []<left>
+ino <leader>{ {}<left>
+
+ino <leader>[<CR> [<CR>]<ESC>O
+ino <leader>(<CR> (<CR>)<ESC>O
+ino <leader>{<CR> {<CR>}<ESC>O
 
 " Lorem ipsum
 ino /lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

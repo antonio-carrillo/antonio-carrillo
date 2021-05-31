@@ -33,9 +33,13 @@ call plug#begin(g:plugged_home)
     "   PEP8 identation
     Plug 'Vimjas/vim-python-pep8-indent'
     " JavaScript / TypeScript
+    Plug 'alvan/vim-closetag'
+    Plug 'pangloss/vim-javascript'
+    Plug 'elzr/vim-json'
+    Plug 'mxw/vim-jsx'
+    Plug 'millermedeiros/vim-esformatter'
     Plug 'leafgarland/typescript-vim'
-    Plug 'othree/yajs.vim'
-    Plug 'peitalin/vim-jsx-typescript'
+    Plug 'prettier/vim-prettier'
     " Formater
     Plug 'Chiel92/vim-autoformat'
     " Git
@@ -44,6 +48,13 @@ call plug#begin(g:plugged_home)
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
 call plug#end()
+
+let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.vue,*xhtml,*.xml'
+let g:closetag_filetypes = 'html,xhtml,phtml,javascriptreact,typescriptreact'
+let g:closetag_regions = {
+  \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+  \ 'javascript.jsx': 'jsxRegion',
+  \ }
 
 " Tab and indentation
 filetype plugin indent on

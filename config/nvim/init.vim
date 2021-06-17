@@ -14,6 +14,10 @@ call plug#begin(g:plugged_home)
     Plug 'relastle/bluewery.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    " File explorer
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'preservim/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
     " Better Visual Guide
     Plug 'Yggdroot/indentLine'
     " Hotkeys
@@ -75,6 +79,26 @@ autocmd FileType
 " UI configuration
 syntax on
 syntax enable
+
+" NerdTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
+    \ b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+    \ "Modified"  : "~",
+    \ "Staged"    : "+",
+    \ "Untracked" : "?",
+    \ "Renamed"   : "→",
+    \ "Unmerged"  : "=",
+    \ "Deleted"   : "-",
+    \ "Dirty"     : "d",
+    \ "Clean"     : "c",
+    \ 'Ignored'   : 'i',
+    \ "Unknown"   : "u"
+    \ }
+
+" CtrlP
+let g:ctrlp_user_command = ['.git',
+    \ 'cd %s && git ls-files -co --exclude-standard']
 
 " True Color Support if it's avaiable in terminal
 if has("termguicolors")

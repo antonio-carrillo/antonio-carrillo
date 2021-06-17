@@ -35,10 +35,11 @@ call plug#begin(g:plugged_home)
     " JavaScript / TypeScript
     Plug 'alvan/vim-closetag'
     Plug 'pangloss/vim-javascript'
+    Plug 'leafgarland/typescript-vim'
     Plug 'elzr/vim-json'
     Plug 'mxw/vim-jsx'
+    Plug 'peitalin/vim-jsx-typescript'
     Plug 'millermedeiros/vim-esformatter'
-    Plug 'leafgarland/typescript-vim'
     Plug 'prettier/vim-prettier'
     " Formater
     Plug 'Chiel92/vim-autoformat'
@@ -59,11 +60,12 @@ let g:closetag_regions = {
 " Tab and indentation
 filetype plugin indent on
 set expandtab
+set smartindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-autocmd Filetype
+autocmd FileType
     \ htm,html,php,css,scss,
     \javascript,javascriptreact,
     \typescript,typescriptreact
@@ -269,6 +271,8 @@ ino <leader>{ {}<left>
 ino <leader>[<CR> [<CR>]<ESC>O
 ino <leader>(<CR> (<CR>)<ESC>O
 ino <leader>{<CR> {<CR>}<ESC>O
+
+ino <leader><CR> <CR><ESC>O
 
 " Lorem ipsum
 ino /lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

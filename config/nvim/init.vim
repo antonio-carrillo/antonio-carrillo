@@ -272,7 +272,7 @@ inoremap <C-L> <Del>
 augroup HiglightTODO
     autocmd!
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo',
-        \ 'TODO\|FIXME\|DEBUG\|HACK\|TIAH\|<<<\|>>>',
+        \ 'TODO\|FIXME\|DEBUG\|HACK\|TEST\|DEV\|TIAH\|<<<\|>>>',
         \ -1)
 augroup END
 " Navigation through tabs

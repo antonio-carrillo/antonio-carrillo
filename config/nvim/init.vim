@@ -30,6 +30,7 @@ call plug#begin(g:plugged_home)
     "   Installed with CocInstall:
     "     coc-jedi
     "     coc-react-refactor
+    "     coc-tailwindcss
     "     coc-tsserver
     " Python
     "   Docstrings
@@ -54,6 +55,7 @@ call plug#begin(g:plugged_home)
     Plug 'junegunn/gv.vim'
 call plug#end()
 
+let g:closetag_close_shortcut = '<leader>>'
 let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.vue,*xhtml,*.xml'
 let g:closetag_filetypes = 'html,xhtml,phtml,javascriptreact,typescriptreact'
 let g:closetag_regions = {
@@ -228,13 +230,22 @@ augroup END
 "   Docstrings
 let g:pydocstring_formatter = 'numpy'
 nmap <silent> <C-D> <Plug>(pydocstring)
-"   Linter
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'never'
+
+" Linter
 let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+    \ 'javascript': ['prettier', 'eslint'],
+    \ 'typescript': ['prettier', 'eslint'],
+    \ 'typescriptreact': ['prettier', 'eslint']
+    \ }
+let g:ale_linters = {
+    \ 'javascript': ['eslint'],
+    \ 'python': ['flake8']
+    \ }
+nmap <leader>f <Plug>(ale_fix)
 
 " Git
 "   Marks
@@ -259,6 +270,12 @@ nmap ]H 9999]h
 nmap [H 9999[h
 
 " TIAH
+
+" CoC Remaps
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gy <Plug>(coc-type-definition)
 
 " Fix markdown files not displaying code
 let g:indentLine_fileTypeExclude = ['markdown']

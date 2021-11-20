@@ -68,15 +68,15 @@ filetype plugin indent on
 set expandtab
 set smartindent
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=0
 set softtabstop=4
 
 autocmd FileType
-    \ htm,html,php,css,scss,
+    \ htm,html,php,css,scss,json,
     \javascript,javascriptreact,
     \typescript,typescriptreact
     \ setlocal expandtab
-    \ tabstop=2 shiftwidth=2 softtabstop=2
+    \ tabstop=2 softtabstop=2
 
 " UI configuration
 syntax on
@@ -235,14 +235,18 @@ nmap <silent> <C-D> <Plug>(pydocstring)
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_echo_msg_warning_str = 'W'
-let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-    \ 'javascript': ['prettier', 'eslint'],
-    \ 'typescript': ['prettier', 'eslint'],
-    \ 'typescriptreact': ['prettier', 'eslint']
+    \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \ 'javascript': ['eslint', 'prettier'],
+    \ 'json': ['eslint', 'prettier'],
+    \ 'typescript': ['eslint', 'prettier'],
+    \ 'typescriptreact': ['eslint', 'prettier'],
+    \ 'css': ['prettier']
     \ }
 let g:ale_linters = {
     \ 'javascript': ['eslint'],
+    \ 'typescript': ['eslint'],
+    \ 'typescriptreact': ['eslint'],
     \ 'python': ['flake8']
     \ }
 nmap <leader>f <Plug>(ale_fix)
@@ -279,12 +283,15 @@ nmap <silent> gy <Plug>(coc-type-definition)
 
 " Fix markdown files not displaying code
 let g:indentLine_fileTypeExclude = ['markdown']
+let g:indentLine_concealcursor = "n"
 " Autoformat with F3
 noremap <F3> :Autoformat<CR>
 " Clear search with Ctrl+L
 nmap <silent> <C-L> :noh<CR>
 " Delete on letters
 inoremap <C-L> <Del>
+" Replace selected text
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " Higlight Tags
 augroup HiglightTODO
     autocmd!

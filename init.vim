@@ -1,3 +1,4 @@
+" Plugins location
 if has('win32') || has('win64')
     let g:plugged_home = '~/AppData/Local/nvim/plugged'
 else
@@ -5,7 +6,6 @@ else
 endif
 
 " Plugins List
-"   Pluggins managed with comands started with: Plug
 call plug#begin(g:plugged_home)
     " UI related
     Plug 'artanikin/vim-synthwave84'
@@ -60,6 +60,7 @@ call plug#begin(g:plugged_home)
     Plug 'junegunn/gv.vim'
 call plug#end()
 
+" Closetag
 let g:closetag_shortcut = '<leader>>'
 let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.vue,*xhtml,*.xml'
 let g:closetag_filetypes = 'html,xhtml,phtml,javascriptreact,typescriptreact'
@@ -75,7 +76,6 @@ set smartindent
 set tabstop=2
 set shiftwidth=0
 set softtabstop=2
-
 autocmd FileType
     \ markdown,python,vim
     \ setlocal expandtab
@@ -98,7 +98,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Dirty"     : "d",
     \ "Clean"     : "c",
     \ 'Ignored'   : 'i',
-    \ "Unknown"   : "u"
+    \ "Unknown"   : "u",
     \ }
 
 " CtrlP
@@ -164,11 +164,10 @@ set mouse=a
 set colorcolumn=80
 set cursorline
 set noshowmode
-" set noshowmatch
 
 " Behaviours
-set nolazyredraw
 set nobackup
+set nolazyredraw
 set noswapfile
 set nowritebackup
 

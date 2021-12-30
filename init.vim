@@ -258,7 +258,7 @@ let g:ale_linters = {
     \ 'typescriptreact': ['eslint'],
     \ 'python': ['flake8'],
     \ }
-nmap <leader>f <Plug>(ale_fix)
+nmap <silent> <F3> <Plug>(ale_fix)
 
 " Git
 "   Marks
@@ -293,8 +293,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 " Fix markdown files not displaying code
 let g:indentLine_fileTypeExclude = ['markdown']
 let g:indentLine_concealcursor = "n"
-" Autoformat with F3
-noremap <F3> :Autoformat<CR>
 " Clear search with Ctrl+L
 nmap <silent> <C-L> :noh<CR>
 " Delete on letters

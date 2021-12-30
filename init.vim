@@ -7,24 +7,28 @@ endif
 
 " Plugins List
 call plug#begin(g:plugged_home)
-    " UI related
-    Plug 'artanikin/vim-synthwave84'
-    Plug 'chriskempson/base16-vim'
-    Plug 'ghifarit53/tokyonight-vim'
-    Plug 'relastle/bluewery.vim'
-    Plug 'vim-airline/vim-airline'
+    " Themes
     Plug 'vim-airline/vim-airline-themes'
-    " File explorer
+    Plug 'ayu-theme/ayu-vim'
+    Plug 'chriskempson/base16-vim'
+    Plug 'artanikin/vim-synthwave84'
+    Plug 'ghifarit53/tokyonight-vim'
+    " UI
     Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'Yggdroot/indentLine'
     Plug 'preservim/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
-    " Better Visual Guide
-    Plug 'Yggdroot/indentLine'
+    Plug 'vim-airline/vim-airline'
     " Hotkeys
     Plug 'tpope/vim-unimpaired'
+    " Git
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'junegunn/gv.vim'
     " Syntax check
     Plug 'w0rp/ale'
-    " Completion, documentation, and typification (COC)
+    " Completion, documentation, and typification (CoC)
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     "   For configuration file run the command: :CocConfig
     "   Installed with CocInstall:
@@ -51,13 +55,6 @@ call plug#begin(g:plugged_home)
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'millermedeiros/vim-esformatter'
     Plug 'prettier/vim-prettier'
-    " Formater
-    Plug 'Chiel92/vim-autoformat'
-    " Git
-    Plug 'mhinz/vim-signify'
-    Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-rhubarb'
-    Plug 'junegunn/gv.vim'
 call plug#end()
 
 " Closetag
@@ -113,22 +110,25 @@ if has("gui_running")
     set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:blocks
 endif
 
-" Colorscheme
-"   Synthwave 84
-let base16colorspace=256
-colorscheme synthwave84
-hi Normal guibg=NONE ctermbg=NONE
-highlight Comment cterm=italic gui=italic
+" Themes
+"   Airline
+" let base16colorspace=256
+" colorscheme base16-gruvbox-dark-hard
+" hi Normal guibg=NONE ctermbg=NONE
+"   Ayu
+let ayucolor='dark'
+colorscheme ayu
 "   TokyoNight
+" colorscheme tokyonight
 " let g:tokyonight_style = 'storm'
 " let g:tokyonight_enable_italic = 1
 " let g:tokyonight_transparent_background = 1
 " let g:tokyonight_cursor = 'green'
-" colorscheme tokyonight
-"   VimAirline
+"   Synthwave 84
 " let base16colorspace=256
-" colorscheme base16-gruvbox-dark-hard
+" colorscheme synthwave84
 " hi Normal guibg=NONE ctermbg=NONE
+" highlight Comment cterm=italic gui=italic
 
 " GUI
 "   Airline
@@ -155,6 +155,12 @@ let g:airline#extensions#tabline#left_alt_sep = '/'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#buffer_nr_show = 0
 let airline#extensions#tabline#middle_click_preserves_windows = 1
+
+"   IdentLine
+let g:indentLine_char = '▏'
+let g:indentLine_first_char = '▏'
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
 
 " Indications and marks
 set number

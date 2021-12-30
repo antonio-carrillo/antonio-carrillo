@@ -77,7 +77,7 @@ set shiftwidth=0
 set softtabstop=2
 
 autocmd FileType
-    \ markdown,python
+    \ markdown,python,vim
     \ setlocal expandtab
     \ tabstop=4 softtabstop=4
 

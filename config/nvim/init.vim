@@ -29,9 +29,13 @@ call plug#begin(g:plugged_home)
     "   For configuration file run the command: :CocConfig
     "   Installed with CocInstall:
     "     coc-jedi
+    "     coc-json
     "     coc-react-refactor
     "     coc-tailwindcss
     "     coc-tsserver
+    " C/C++
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'zchee/deoplete-clang'
     " Python
     "   Docstrings
     Plug 'heavenshell/vim-pydocstring', {'do': 'make install'}
@@ -42,6 +46,7 @@ call plug#begin(g:plugged_home)
     Plug 'pangloss/vim-javascript'
     Plug 'leafgarland/typescript-vim'
     Plug 'elzr/vim-json'
+    Plug 'GutenYe/json5.vim'
     Plug 'mxw/vim-jsx'
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'millermedeiros/vim-esformatter'
@@ -235,14 +240,19 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \ 'c': ['clang-format'],
+    \ 'cpp': ['clang-format'],
     \ 'css': ['prettier'],
     \ 'javascript': ['eslint', 'prettier'],
     \ 'json': ['eslint', 'prettier'],
+    \ 'json5': ['eslint', 'prettier'],
     \ 'python': ['autopep8'],
     \ 'typescript': ['eslint', 'prettier'],
     \ 'typescriptreact': ['eslint', 'prettier'],
     \ }
 let g:ale_linters = {
+    \ 'c': ['clang'],
+    \ 'cpp': ['clang'],
     \ 'javascript': ['eslint'],
     \ 'typescript': ['eslint'],
     \ 'typescriptreact': ['eslint'],

@@ -55,7 +55,7 @@ call plug#begin(g:plugged_home)
     Plug 'junegunn/gv.vim'
 call plug#end()
 
-let g:closetag_close_shortcut = '<leader>>'
+let g:closetag_shortcut = '<leader>>'
 let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.vue,*xhtml,*.xml'
 let g:closetag_filetypes = 'html,xhtml,phtml,javascriptreact,typescriptreact'
 let g:closetag_regions = {
@@ -67,16 +67,14 @@ let g:closetag_regions = {
 filetype plugin indent on
 set expandtab
 set smartindent
-set tabstop=4
+set tabstop=2
 set shiftwidth=0
-set softtabstop=4
+set softtabstop=2
 
 autocmd FileType
-    \ htm,html,php,css,scss,json,
-    \javascript,javascriptreact,
-    \typescript,typescriptreact
+    \ markdown,python
     \ setlocal expandtab
-    \ tabstop=2 softtabstop=2
+    \ tabstop=4 softtabstop=4
 
 " UI configuration
 syntax on
@@ -173,7 +171,7 @@ set nowritebackup
 set ignorecase  " ignore case when searching
 set smartcase   " turn on smartcase
 
-" COC
+" CoC
 augroup COC
     " Use tab for trigger completion with characters ahead and navigate.
     inoremap <silent><expr> <TAB>
@@ -237,17 +235,18 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \ 'css': ['prettier'],
     \ 'javascript': ['eslint', 'prettier'],
     \ 'json': ['eslint', 'prettier'],
+    \ 'python': ['autopep8'],
     \ 'typescript': ['eslint', 'prettier'],
     \ 'typescriptreact': ['eslint', 'prettier'],
-    \ 'css': ['prettier']
     \ }
 let g:ale_linters = {
     \ 'javascript': ['eslint'],
     \ 'typescript': ['eslint'],
     \ 'typescriptreact': ['eslint'],
-    \ 'python': ['flake8']
+    \ 'python': ['flake8'],
     \ }
 nmap <leader>f <Plug>(ale_fix)
 
@@ -296,7 +295,7 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 augroup HiglightTODO
     autocmd!
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo',
-        \ 'TODO\|FIXME\|DEBUG\|HACK\|TEST\|DEV\|TIAH\|<<<\|>>>',
+        \ 'TODO\|FIXME\|DEBUG\|HACK\|TEST\|NOTE\|DEV\|TIAH\|<<<\|>>>',
         \ -1)
 augroup END
 " Navigation through tabs
@@ -311,6 +310,7 @@ noremap <silent> ]<C-T> :+tabmove<CR>
 ino <leader>" ""<left>
 ino <leader>' ''<left>
 ino <leader>« «»<left>
+ino <leader>< <><left>
 ino <leader>` ``<left>
 ino <leader>( ()<left>
 ino <leader>[ []<left>

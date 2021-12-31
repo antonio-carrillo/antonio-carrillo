@@ -29,7 +29,7 @@ call plug#begin(g:plugged_home)
     " Syntax check
     Plug 'w0rp/ale'
     " Completion, documentation, and typification (CoC)
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', { 'branch': 'release' }
     "   For configuration file run the command: :CocConfig
     "   Installed with CocInstall:
     "     coc-jedi
@@ -42,7 +42,7 @@ call plug#begin(g:plugged_home)
     Plug 'zchee/deoplete-clang'
     " Python
     "   Docstrings
-    Plug 'heavenshell/vim-pydocstring', {'do': 'make install'}
+    Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
     "   PEP8 identation
     Plug 'Vimjas/vim-python-pep8-indent'
     " JavaScript / TypeScript
@@ -57,14 +57,13 @@ call plug#begin(g:plugged_home)
     Plug 'prettier/vim-prettier'
 call plug#end()
 
-" Closetag
-let g:closetag_shortcut = '<leader>>'
-let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.vue,*xhtml,*.xml'
-let g:closetag_filetypes = 'html,xhtml,phtml,javascriptreact,typescriptreact'
-let g:closetag_regions = {
-  \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-  \ 'javascript.jsx': 'jsxRegion',
-  \ }
+" Behaviours
+set nobackup
+set nolazyredraw
+set noswapfile
+set nowritebackup
+set ignorecase  " ignore case when searching
+set smartcase   " smartcase when searching
 
 " Tab and indentation
 filetype plugin indent on
@@ -81,56 +80,21 @@ autocmd FileType
 " UI configuration
 syntax on
 syntax enable
+set number
+set relativenumber
+set hidden
+set colorcolumn=80
+set cursorline
+set noshowmode
 
-" NerdTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
-    \ b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-    \ "Modified"  : "~",
-    \ "Staged"    : "+",
-    \ "Untracked" : "?",
-    \ "Renamed"   : "→",
-    \ "Unmerged"  : "=",
-    \ "Deleted"   : "-",
-    \ "Dirty"     : "d",
-    \ "Clean"     : "c",
-    \ 'Ignored'   : 'i',
-    \ "Unknown"   : "u",
-    \ }
-
-" CtrlP
-let g:ctrlp_user_command = ['.git',
-    \ 'cd %s && git ls-files -co --exclude-standard']
-
-" True Color Support if it's avaiable in terminal
-if has("termguicolors")
+"   True Color
+if has('termguicolors')
     set termguicolors
 endif
-if has("gui_running")
+if has('gui_running')
     set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:blocks
 endif
 
-" Themes
-"   Airline
-" let base16colorspace=256
-" colorscheme base16-gruvbox-dark-hard
-" hi Normal guibg=NONE ctermbg=NONE
-"   Ayu
-let ayucolor='dark'
-colorscheme ayu
-"   TokyoNight
-" colorscheme tokyonight
-" let g:tokyonight_style = 'storm'
-" let g:tokyonight_enable_italic = 1
-" let g:tokyonight_transparent_background = 1
-" let g:tokyonight_cursor = 'green'
-"   Synthwave 84
-" let base16colorspace=256
-" colorscheme synthwave84
-" hi Normal guibg=NONE ctermbg=NONE
-" highlight Comment cterm=italic gui=italic
-
-" GUI
 "   Airline
 let g:airline_left_sep  = ''
 let g:airline_left_alt_sep = ''
@@ -162,24 +126,54 @@ let g:indentLine_first_char = '▏'
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 0
 
-" Indications and marks
-set number
-set relativenumber
-set hidden
-set mouse=a
-set colorcolumn=80
-set cursorline
-set noshowmode
+" Themes
+"   Airline
+" let base16colorspace=256
+" colorscheme base16-gruvbox-dark-hard
+" hi Normal guibg=NONE ctermbg=NONE
+"   Ayu
+let ayucolor='dark'
+colorscheme ayu
+"   TokyoNight
+" colorscheme tokyonight
+" let g:tokyonight_style = 'storm'
+" let g:tokyonight_enable_italic = 1
+" let g:tokyonight_transparent_background = 1
+" let g:tokyonight_cursor = 'green'
+"   Synthwave 84
+" let base16colorspace=256
+" colorscheme synthwave84
+" hi Normal guibg=NONE ctermbg=NONE
+" highlight Comment cterm=italic gui=italic
 
-" Behaviours
-set nobackup
-set nolazyredraw
-set noswapfile
-set nowritebackup
+" Closetag
+let g:closetag_shortcut = '<leader>>'
+let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.vue,*xhtml,*.xml'
+let g:closetag_filetypes = 'html,xhtml,phtml,javascriptreact,typescriptreact'
+let g:closetag_regions = {
+  \   'typescript.tsx': 'jsxRegion,tsxRegion',
+  \   'javascript.jsx': 'jsxRegion',
+  \ }
 
-" Search
-set ignorecase  " ignore case when searching
-set smartcase   " turn on smartcase
+" NerdTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
+    \ b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+    \   'Modified'  : '~',
+    \   'Staged'    : '+',
+    \   'Untracked' : '?',
+    \   'Renamed'   : '→',
+    \   'Unmerged'  : '=',
+    \   'Deleted'   : '-',
+    \   'Dirty'     : 'd',
+    \   'Clean'     : 'c',
+    \   'Ignored'   : 'i',
+    \   'Unknown'   : 'u',
+    \ }
+
+" CtrlP
+let g:ctrlp_user_command = ['.git',
+    \ 'cd %s && git ls-files -co --exclude-standard']
 
 " CoC
 augroup COC
@@ -244,24 +238,24 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_fixers = {
-    \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-    \ 'c': ['clang-format'],
-    \ 'cpp': ['clang-format'],
-    \ 'css': ['prettier'],
-    \ 'javascript': ['eslint', 'prettier'],
-    \ 'json': ['eslint', 'prettier'],
-    \ 'json5': ['eslint', 'prettier'],
-    \ 'python': ['autopep8'],
-    \ 'typescript': ['eslint', 'prettier'],
-    \ 'typescriptreact': ['eslint', 'prettier'],
+    \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \   'c': ['clang-format'],
+    \   'cpp': ['clang-format'],
+    \   'css': ['prettier'],
+    \   'javascript': ['eslint', 'prettier'],
+    \   'json': ['eslint', 'prettier'],
+    \   'json5': ['eslint', 'prettier'],
+    \   'python': ['autopep8'],
+    \   'typescript': ['eslint', 'prettier'],
+    \   'typescriptreact': ['eslint', 'prettier'],
     \ }
 let g:ale_linters = {
-    \ 'c': ['clang'],
-    \ 'cpp': ['clang'],
-    \ 'javascript': ['eslint'],
-    \ 'typescript': ['eslint'],
-    \ 'typescriptreact': ['eslint'],
-    \ 'python': ['flake8'],
+    \   'c': ['clang'],
+    \   'cpp': ['clang'],
+    \   'javascript': ['eslint'],
+    \   'typescript': ['eslint'],
+    \   'typescriptreact': ['eslint'],
+    \   'python': ['flake8'],
     \ }
 nmap <silent> <F3> <Plug>(ale_fix)
 
@@ -297,10 +291,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 
 " Fix markdown files not displaying code
 let g:indentLine_fileTypeExclude = ['markdown']
-let g:indentLine_concealcursor = "n"
+let g:indentLine_concealcursor = 'n'
 " Clear search with Ctrl+L
 nmap <silent> <C-L> :noh<CR>
-" Delete on letters
+" Delete on letters on edit mode
 inoremap <C-L> <Del>
 " Replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
@@ -311,6 +305,7 @@ augroup HiglightTODO
         \ 'TODO\|FIXME\|DEBUG\|HACK\|TEST\|NOTE\|DEV\|TIAH\|<<<\|>>>',
         \ -1)
 augroup END
+
 " Navigation through tabs
 noremap <silent> [t :tabprev<CR>
 noremap <silent> ]t :tabnext<CR>
@@ -320,6 +315,7 @@ noremap <silent> [<C-T> :-tabmove<CR>
 noremap <silent> ]<C-T> :+tabmove<CR>
 
 " Auto-close quotes and parenthesis
+ino <leader><leader> <leader>
 ino <leader>" ""<left>
 ino <leader>' ''<left>
 ino <leader>« «»<left>

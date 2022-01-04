@@ -170,6 +170,8 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \   'Ignored'   : 'i',
     \   'Unknown'   : 'u',
     \ }
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-T> :NERDTreeToggle<CR>
 
 " CtrlP
 let g:ctrlp_user_command = ['.git',
@@ -231,7 +233,7 @@ augroup END
 " Python
 "   Docstrings
 let g:pydocstring_formatter = 'numpy'
-nmap <silent> <C-D> <Plug>(pydocstring)
+nmap <silent> <F4> <Plug>(pydocstring)
 
 " Linter
 let g:ale_echo_msg_error_str = 'E'
@@ -297,7 +299,7 @@ nmap <silent> <C-L> :noh<CR>
 " Delete on letters on edit mode
 inoremap <C-L> <Del>
 " Replace selected text
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+vnoremap <C-R> "hy:%s/<C-R>h//gc<left><left><left>
 " Higlight Tags
 augroup HiglightTODO
     autocmd!

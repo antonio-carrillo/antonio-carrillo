@@ -79,6 +79,10 @@ autocmd FileType
     \ setlocal expandtab
     \ tabstop=4 softtabstop=4
 
+" Font
+set guifontwide=Noto_Sans_Mono
+
+
 " UI configuration
 syntax on
 syntax enable
@@ -88,6 +92,8 @@ set hidden
 set colorcolumn=80
 set cursorline
 set noshowmode
+set splitbelow
+set splitright
 
 "   True Color
 if has('termguicolors')
@@ -136,6 +142,8 @@ let g:indentLine_setColors = 0
 "   Ayu
 let ayucolor='dark'
 colorscheme ayu
+hi Normal guibg=NONE ctermbg=NONE
+highlight Comment cterm=italic gui=italic
 "   TokyoNight
 " colorscheme tokyonight
 " let g:tokyonight_style = 'storm'
@@ -313,6 +321,10 @@ augroup HiglightTODO
         \ 'TODO\|FIXME\|DEBUG\|HACK\|TEST\|NOTE\|DEV\|TIAH\|<<<\|>>>',
         \ -1)
 augroup END
+
+" Paste and select pasted
+noremap <silent> gp p`[v`]
+noremap <silent> gP P`[v`]
 
 " Navigation through tabs
 noremap <silent> [t :tabprev<CR>

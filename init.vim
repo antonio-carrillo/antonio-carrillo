@@ -32,8 +32,10 @@ call plug#begin(g:plugged_home)
     Plug 'neoclide/coc.nvim', { 'branch': 'release' }
     "   For configuration file run the command: :CocConfig
     "   Installed with CocInstall:
+    "     coc-css
     "     coc-jedi
     "     coc-json
+    "     coc-phpls
     "     coc-react-refactor
     "     coc-tailwindcss
     "     coc-tsserver
@@ -148,8 +150,9 @@ colorscheme ayu
 
 " Closetag
 let g:closetag_shortcut = '<leader>>'
-let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.vue,*xhtml,*.xml'
-let g:closetag_filetypes = 'html,xhtml,phtml,javascriptreact,typescriptreact'
+let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.vue,*xhtml,*.xml,*.php,*.js'
+let g:closetag_filetypes =
+  \ 'html,xhtml,phtml,javascriptreact,typescriptreact,php,javascript'
 let g:closetag_regions = {
   \   'typescript.tsx': 'jsxRegion,tsxRegion',
   \   'javascript.jsx': 'jsxRegion',
@@ -244,9 +247,11 @@ let g:ale_fixers = {
     \   'c': ['clang-format'],
     \   'cpp': ['clang-format'],
     \   'css': ['prettier'],
+    \   'html': ['tidy'],
     \   'javascript': ['eslint', 'prettier'],
     \   'json': ['eslint', 'prettier'],
     \   'json5': ['eslint', 'prettier'],
+    \   'php': ['php_cs_fixer'],
     \   'python': ['autopep8'],
     \   'typescript': ['eslint', 'prettier'],
     \   'typescriptreact': ['eslint', 'prettier'],
@@ -254,6 +259,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
     \   'c': ['clang'],
     \   'cpp': ['clang'],
+    \   'html': ['tidy'],
     \   'javascript': ['eslint'],
     \   'typescript': ['eslint'],
     \   'typescriptreact': ['eslint'],

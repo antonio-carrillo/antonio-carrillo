@@ -1,0 +1,9 @@
+# Locations
+export FILES='/mnt/f'
+export PROGRAMS='/mnt/p'
+export WINDOWS='/mnt/c'
+
+# Software
+alias firefox="$WINDOWS/Program\ Files/Mozilla\ Firefox/firefox.exe"
+alias start='powershell.exe start'
+alias ffmpeg='ffmpeg.exe'

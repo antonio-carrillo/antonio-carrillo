@@ -1,20 +1,17 @@
 # Aliases
 alias vim='nvim'
 alias vera='veracrypt -m=nokernelcrypto'
-alias firefox='/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe'
-alias imageglass='/mnt/e/Image\ Glass\ Kobe/ImageGlass.exe'
-alias start='powershell.exe start'
 
 # Default applications
-export BROWSER='firefox'
+# export BROWSER='firefox'
 export EDITOR='nvim'
 
 # Path
-export PATH='$HOME/.local/bin:$PATH'
-export PATH='$HOME/Files/Software/Scripts:$PATH'
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/Files/Software/Scripts:$PATH"
 
 # Nodenv
-export PATH='$HOME/.nodenv/bin:$PATH'
+export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
 # Plugins

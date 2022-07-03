@@ -55,7 +55,6 @@ call plug#begin(g:plugged_home)
     Plug 'GutenYe/json5.vim'
     Plug 'mxw/vim-jsx'
     Plug 'peitalin/vim-jsx-typescript'
-    Plug 'millermedeiros/vim-esformatter'
     Plug 'prettier/vim-prettier'
 call plug#end()
 
@@ -193,10 +192,10 @@ augroup COC
     " Use tab for trigger completion with characters ahead and navigate.
     inoremap <silent><expr> <TAB>
         \ pumvisible() ? "\<C-N>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
+        \ CheckBackspace() ? "\<TAB>" :
         \ coc#refresh()
     inoremap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<C-H>"
-    function! s:check_back_space() abort
+    function! CheckBackspace() abort
         let col = col('.') - 1
         return !col || getline('.')[col - 1]  =~# '\s'
     endfunction
@@ -206,20 +205,22 @@ augroup COC
     else
         inoremap <silent><expr> <C-@> coc#refresh()
     endif
+    " Make <CR> auto-select the first completion item and notify coc.nvim to
+    " format on enter.
+    inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+        \ : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
     " GoTo code navigation.
     nmap <silent> gd <Plug>(coc-definition)
     nmap <silent> gy <Plug>(coc-type-definition)
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
     " Use <C-K> to show documentation in preview window.
-    nnoremap <silent> <C-K> :call <SID>show_documentation()<CR>
-    function! s:show_documentation()
-        if (index(['vim','help'], &filetype) >= 0)
-            execute 'h '.expand('<cword>')
-        elseif (coc#rpc#ready())
+    nnoremap <silent> <C-K> :call ShowDocumentation()<CR>
+    function! ShowDocumentation()
+        if CocAction('hasProvider', 'hover')
             call CocActionAsync('doHover')
         else
-            execute '!' . &keywordprg . " " . expand('<cword>')
+            call feedkeys('<C-K>', 'in')
         endif
     endfunction
     " Symbol renaming.
@@ -256,13 +257,13 @@ let g:ale_fixers = {
     \   'cpp': ['clang-format'],
     \   'css': ['prettier'],
     \   'html': ['tidy'],
-    \   'javascript': ['eslint', 'prettier'],
-    \   'json': ['eslint', 'prettier'],
-    \   'json5': ['eslint', 'prettier'],
+    \   'javascript': ['prettier', 'eslint'],
+    \   'json': ['prettier', 'eslint'],
+    \   'json5': ['prettier', 'eslint'],
     \   'php': ['php_cs_fixer'],
     \   'python': ['autopep8'],
-    \   'typescript': ['eslint', 'prettier'],
-    \   'typescriptreact': ['eslint', 'prettier'],
+    \   'typescript': ['prettier', 'eslint'],
+    \   'typescriptreact': ['prettier', 'eslint'],
     \ }
 let g:ale_linters = {
     \   'c': ['clang'],

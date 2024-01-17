@@ -11,15 +11,19 @@ alias vera='veracrypt -m=nokernelcrypto'
 alias pip-essentials='pip install wheel pynvim jedi autopep8 flake8'
 
 # Default applications
-# export BROWSER='firefox'
+export BROWSER='firefox'
 export EDITOR='nvim'
 
 # Path
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/Files/Software/Scripts:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/Files/Software/Scripts"
+
+# Go
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # Nodenv
-export PATH="$HOME/.nodenv/bin:$PATH"
+export PATH="$PATH:$HOME/.nodenv/bin"
 eval "$(nodenv init -)"
 
 # Plugins

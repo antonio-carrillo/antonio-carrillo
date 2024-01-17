@@ -1,3 +1,10 @@
+# Settings
+
+DISABLE_AUTO_TITLE="true"
+function set_terminal_title() {
+  echo -en "\e]2;$@\a"
+}
+
 # Aliases
 alias vim='nvim'
 alias vera='veracrypt -m=nokernelcrypto'

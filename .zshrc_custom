@@ -8,6 +8,7 @@ function set_terminal_title() {
 # Aliases
 alias vim='nvim'
 alias vera='veracrypt -m=nokernelcrypto'
+alias pip-essentials='pip install wheel pynvim jedi autopep8 flake8'
 
 # Default applications
 # export BROWSER='firefox'

@@ -7,3 +7,4 @@ export WINDOWS='/mnt/c'
 alias firefox="$WINDOWS/Program\ Files/Mozilla\ Firefox/firefox.exe"
 alias start='powershell.exe start'
 alias ffmpeg='ffmpeg.exe'
+alias drawio='$PROGRAMS/draw.io/draw.io.exe'

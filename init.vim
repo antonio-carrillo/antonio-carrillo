@@ -37,6 +37,7 @@ call plug#begin(g:plugged_home)
   "     coc-json
   "     coc-phpls
   "     coc-react-refactor
+  "     coc-snippets
   "     coc-tailwindcss
   "     coc-tsserver
   " C/C++
@@ -244,8 +245,9 @@ augroup END
 
 " Python
 "   Docstrings
+let g:pydocstring_doq_path = '$HOME/.config/nvim/env/bin/doq'
 let g:pydocstring_formatter = 'numpy'
-nmap <silent> <F4> <Plug>(pydocstring)
+nmap <silent> <F6> <Plug>(pydocstring)
 
 " Linter
 let g:ale_echo_msg_error_str = 'E'
@@ -274,7 +276,7 @@ let g:ale_linters = {
   \   'typescriptreact': ['eslint'],
   \   'python': ['flake8'],
   \ }
-nmap <silent> <F3> <Plug>(ale_fix)
+nmap <silent> <F5> <Plug>(ale_fix)
 
 " Git
 "   Marks
@@ -327,6 +329,9 @@ augroup END
 noremap <silent> gp p`[v`]
 noremap <silent> gP P`[v`]
 
+" Copy and paste to clipboard
+noremap <F3> "*
+
 " Navigation through tabs
 noremap <silent> [t :tabprev<CR>
 noremap <silent> ]t :tabnext<CR>
@@ -345,6 +350,7 @@ ino <leader>` ``<left>
 ino <leader>( ()<left>
 ino <leader>[ []<left>
 ino <leader>{ {}<left>
+ino <leader>/* /**/<left><left>
 
 ino <leader>[<CR> [<CR>]<ESC>O
 ino <leader>(<CR> (<CR>)<ESC>O

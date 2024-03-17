@@ -8,17 +8,25 @@ endif
 " Plugins List
 call plug#begin(g:plugged_home)
   " Themes
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'ayu-theme/ayu-vim'
-  Plug 'chriskempson/base16-vim'
-  Plug 'artanikin/vim-synthwave84'
-  Plug 'ghifarit53/tokyonight-vim'
+  "   Uncomment the theme you want to use
+  "Plug 'ayu-theme/ayu-vim'
+  "Plug 'chriskempson/base16-vim'
+  "Plug 'morhetz/gruvbox'
+  "Plug 'joshdick/onedark.vim'
+  "Plug 'arcticicestudio/nord-vim'
+  "Plug 'rakr/vim-one'
+  "Plug 'liuchengxu/space-vim-theme'
+  "Plug 'jaredgorski/SpaceCamp'
+  "Plug 'artanikin/vim-synthwave84'
+  "Plug 'jsit/toast.vim'
+  "Plug 'ghifarit53/tokyonight-vim'
   " UI
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'Yggdroot/indentLine'
   Plug 'preservim/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   " Hotkeys
   Plug 'tpope/vim-unimpaired'
   " Git
@@ -134,27 +142,41 @@ let g:indentLine_first_char = '▏'
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 0
 
-" Themes
-"   Airline
-" let base16colorspace=256
-" colorscheme base16-gruvbox-dark-hard
-" hi Normal guibg=NONE ctermbg=NONE
+" Themes : adaptable
 "   Ayu
-let ayucolor='dark'
-colorscheme ayu
-hi Normal guibg=NONE ctermbg=NONE
-highlight Comment cterm=italic gui=italic
-"   TokyoNight
-" colorscheme tokyonight
-" let g:tokyonight_style = 'storm'
-" let g:tokyonight_enable_italic = 1
-" let g:tokyonight_transparent_background = 1
-" let g:tokyonight_cursor = 'green'
+"let ayucolor='dark'  " 'light' or 'dark'
+"colorscheme ayu
+"   Space
+"colorscheme space_vim_theme
+"   Toast
+"set background=dark  " light or dark
+"colorscheme toast
+
+" Themes : dark
+"   Gruvbox
+"let g:gruvbox_italic=1
+"colorscheme gruvbox
+"highlight Comment cterm=italic gui=italic
+"   Nord
+"colorscheme nord
+"   SpaceCamp
+"colorscheme spacecamp
 "   Synthwave 84
-" let base16colorspace=256
-" colorscheme synthwave84
-" hi Normal guibg=NONE ctermbg=NONE
-" highlight Comment cterm=italic gui=italic
+"colorscheme synthwave84
+"highlight Comment cterm=italic gui=italic
+"   TokyoNight
+"let g:tokyonight_style = 'night'  " 'night' or 'storm'
+"let g:tokyonight_enable_italic = 1
+"let g:tokyonight_transparent_background = 1
+"let g:tokyonight_menu_selection_background = 'red'
+"let g:tokyonight_cursor = 'red'
+"colorscheme tokyonight
+
+" Themes : light
+"   Shine
+"colorscheme shine
+
+hi Normal guibg=NONE ctermbg=NONE
 
 " Closetag
 let g:closetag_shortcut = '<leader>>'

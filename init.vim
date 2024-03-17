@@ -28,6 +28,7 @@ call plug#begin(g:plugged_home)
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   " Hotkeys
+  Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
   " Git
   Plug 'mhinz/vim-signify'

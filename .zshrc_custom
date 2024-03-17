@@ -29,3 +29,13 @@ eval "$(nodenv init -)"
 # Plugins
 # Docker Command-line completion
 plugins=(... docker docker-compose)
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PATH:$PYENV_ROOT/bin"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+# Zoxide
+
+eval "$(zoxide init zsh)"

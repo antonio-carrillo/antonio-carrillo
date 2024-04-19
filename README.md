@@ -1,6 +1,11 @@
-- 👋 Hi, I’m @antonio-carrillo
+👋 Hi, I’m @antonio-carrillo
 - 💻 My skills include:
-  - Python for unit testing, [Django](https://github.com/django/django), [Django REST Framework](https://github.com/encode/django-rest-framework), [Flask](https://github.com/pallets/flask), and [Gauge](https://github.com/getgauge/gauge-python)
+  - Python
+    - [pytest](https://docs.pytest.org) + [tox](https://tox.wiki)
+    - [Django](https://github.com/django/django)
+    - [Django REST Framework](https://github.com/encode/django-rest-framework)
+    - [Flask](https://github.com/pallets/flask)
+    - [Gauge](https://github.com/getgauge/gauge-python)
   - C/C++ for data processing.
   - C# for .Net applications.
   - NodeJS with TypeScript for [React](https://github.com/facebook/react) and [Angular](https://github.com/angular/angular)
@@ -9,9 +14,13 @@
   - Python with Django and unit testing
   - Network Security
   - Deep Learning
+  - DevOps continuous integration and delivery
+  - IoT programming and mobile applications for it
 - 🌱 I’m currently learning:
-  - Test-Driven Development
-- 💼 I’m currently working as freelance developer.
+  - Test-Driven Development (intermediate)
+  - Python asynchronous tasks (basics)
+  - Go language (basics)
+- 💼 I’m currently working as Main Developer for Faragauss System.
 
 🔧 Some previous works are:
 - Main Developer on _Data Reducing and Lucky Imaging_ for TAOS-II project, UNAM.
@@ -24,3 +33,8 @@
 - Read the book _Clean Code_ by Uncle Bob (but adapt some tips to modern times).
 - Modular programming is essential.
 - API’s and logs are more important than you think.
+
+🌮 Other interests:
+- History, mainly Antiquity and Middle Ages
+- Linguistics, mainly general linguistics and sociolinguistics
+- Video games, RPG, turn-based, strategy, and bullet hell

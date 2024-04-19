@@ -23,12 +23,9 @@ call plug#begin(g:plugged_home)
   " UI
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'Yggdroot/indentLine'
-  Plug 'preservim/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   " Hotkeys
-  Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
   " Git
   Plug 'mhinz/vim-signify'
@@ -49,9 +46,6 @@ call plug#begin(g:plugged_home)
   "     coc-snippets
   "     coc-tailwindcss
   "     coc-tsserver
-  " C/C++
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'zchee/deoplete-clang'
   " Python
   "   Docstrings
   Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
@@ -189,24 +183,6 @@ let g:closetag_regions = {
   \   'javascript.jsx': 'jsxRegion',
   \ }
 
-" NerdTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
-  \ b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-  \   'Modified'  : '~',
-  \   'Staged'    : '+',
-  \   'Untracked' : '?',
-  \   'Renamed'   : '→',
-  \   'Unmerged'  : '=',
-  \   'Deleted'   : '-',
-  \   'Dirty'     : 'd',
-  \   'Clean'     : 'c',
-  \   'Ignored'   : 'i',
-  \   'Unknown'   : 'u',
-  \ }
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-T> :NERDTreeToggle<CR>
-
 " CtrlP
 let g:ctrlp_user_command = ['.git',
   \ 'cd %s && git ls-files -co --exclude-standard']
@@ -291,8 +267,8 @@ let g:ale_fixers = {
   \   'typescriptreact': ['prettier', 'eslint'],
   \ }
 let g:ale_linters = {
-  \   'c': ['clang'],
-  \   'cpp': ['clang'],
+  \   'c': ['ccls'],
+  \   'cpp': ['ccls'],
   \   'html': ['tidy'],
   \   'javascript': ['eslint'],
   \   'typescript': ['eslint'],

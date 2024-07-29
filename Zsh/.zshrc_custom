@@ -5,10 +5,12 @@ function set_terminal_title() {
   echo -en "\e]2;$@\a"
 }
 
+# System path
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
 # Aliases
-alias vim='nvim'
 alias vera='veracrypt -m=nokernelcrypto'
-alias pip-essentials='pip install wheel pynvim jedi autopep8 flake8'
+alias pip-essentials='pip install wheel pynvim jedi autopep8 flake8 bpython'
 
 # Default applications
 export BROWSER='firefox'

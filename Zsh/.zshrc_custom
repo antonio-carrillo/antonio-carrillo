@@ -33,9 +33,7 @@ plugins=(... docker docker-compose)
 eval "$(zoxide init zsh)"
 
 # fzf
-
 source <(fzf --zsh)
-
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:-1,fg+:#d0d0d0,bg:-1,bg+:#262626
   --color=hl:#7d54c3,hl+:#5fd7ff,info:#afaf87,marker:#63b00c

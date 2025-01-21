@@ -1,15 +1,20 @@
-👋 Hi, I’m @antonio-carrillo
-- 💻 My skills include:
-  - Python
-    - [pytest](https://docs.pytest.org) + [tox](https://tox.wiki)
-    - [Django](https://github.com/django/django)
-    - [Django REST Framework](https://github.com/encode/django-rest-framework)
-    - [Flask](https://github.com/pallets/flask)
-    - [Gauge](https://github.com/getgauge/gauge-python)
-  - C/C++ for data processing.
-  - C# for .Net applications.
-  - NodeJS with TypeScript for [React](https://github.com/facebook/react) and [Angular](https://github.com/angular/angular)
-  - PostgreSQL, MySQL, and SQL Server.
+👋 Hi, I’m @antonio-carrillo, a passionate:
+- 🌐 Backend Developer
+- 📊 Data Analyst
+- 📐 Software Architect
+
+💻 My skills include:
+- Python
+  - [pytest](https://docs.pytest.org) + [tox](https://tox.wiki)
+  - [Django](https://github.com/django/django) + [Django REST Framework](https://github.com/encode/django-rest-framework)
+  - [Flask](https://github.com/pallets/flask)
+  - [Gauge](https://github.com/getgauge/gauge-python)
+- C/C++ for data processing, services, and desktop apps.
+- C# for .Net applications.
+- NodeJS with TypeScript for [React](https://github.com/facebook/react) and [Angular](https://github.com/angular/angular)
+- PostgreSQL, MySQL, and SQL Server.
+- Servers with Apache, Nginx, and Docker.
+- IoT with Arduino, esp32, and Raspberry Pi.
 
 <p align="center">
   <a href="https://skillicons.dev">
@@ -33,18 +38,19 @@
   - IoT Systems for electric sensors and device communication
   - Server Manager for file sharing and API services
 
-- 🌟 I’m interested in:
-  - Python with Django and unit testing
-  - Network Security
-  - Deep Learning
-  - DevOps CI/CD
-  - IoT programming, web services, and mobile applications
-- 🌱 I’m currently learning:
-  - GBD (intermediate)
-  - Test-Driven Development (intermediate)
-  - Python asynchronous tasks (intermediate)
-  - Go language (basics)
-  - Rust (basics)
+🌟 I’m interested in:
+- Python with Django and unit testing
+- Network Security
+- Deep Learning
+- DevOps CI/CD
+- IoT programming, web services, and mobile applications
+
+🌱 I’m currently learning:
+- GBD (intermediate)
+- Test-Driven Development (intermediate)
+- Python asynchronous tasks (intermediate)
+- Go language (basics)
+- Rust (basics)
 
 💬 Some useful tips I recommend are:
 - Unit testing and a good documentation are essencial for a healty project.

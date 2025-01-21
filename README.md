@@ -10,34 +10,12 @@
   - C# for .Net applications.
   - NodeJS with TypeScript for [React](https://github.com/facebook/react) and [Angular](https://github.com/angular/angular)
   - PostgreSQL, MySQL, and SQL Server.
-- 🌟 I’m interested in:
-  - Python with Django and unit testing
-  - Network Security
-  - Deep Learning
-  - DevOps CI/CD
-  - IoT programming, web services, and mobile applications
-- 🌱 I’m currently learning:
-  - GBD (intermediate)
-  - Test-Driven Development (intermediate)
-  - Python asynchronous tasks (intermediate)
-  - Go language (basics)
-  - Rust (basics)
 
-[![My Skills](https://skillicons.dev/icons?i=arch,debian,mint,ubuntu,bash)](https://skillicons.dev)
-
-[![My Skills](https://skillicons.dev/icons?i=arduino,raspberrypi)](https://skillicons.dev)
-
-[![My Skills](https://skillicons.dev/icons?i=c,cpp,cs,dotnet,cmake,qt)](https://skillicons.dev)
-
-[![My Skills](https://skillicons.dev/icons?i=py,django)](https://skillicons.dev)
-
-[![My Skills](https://skillicons.dev/icons?i=ts,nodejs,react,webpack)](https://skillicons.dev)
-
-[![My Skills](https://skillicons.dev/icons?i=dart,flutter)](https://skillicons.dev)
-
-[![My Skills](https://skillicons.dev/icons?i=nginx,docker,php,postgres)](https://skillicons.dev)
-
-[![My Skills](https://skillicons.dev/icons?i=md,neovim,notion,obisidian)](https://skillicons.dev)
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=py,django,flask,c,cpp,cs,qt,dotnet,cmake,ts,nodejs,react,arduino,raspberrypi,opencv,docker,nginx,postgres&perline=3" />
+  </a>
+</p>
 
 💼 My professional experience:
 - UNAM OAN with a scholarship project:
@@ -55,6 +33,19 @@
   - IoT Systems for electric sensors and device communication
   - Server Manager for file sharing and API services
 
+- 🌟 I’m interested in:
+  - Python with Django and unit testing
+  - Network Security
+  - Deep Learning
+  - DevOps CI/CD
+  - IoT programming, web services, and mobile applications
+- 🌱 I’m currently learning:
+  - GBD (intermediate)
+  - Test-Driven Development (intermediate)
+  - Python asynchronous tasks (intermediate)
+  - Go language (basics)
+  - Rust (basics)
+
 💬 Some useful tips I recommend are:
 - Unit testing and a good documentation are essencial for a healty project.
 - Diagrams are the best way to express something.
@@ -70,6 +61,12 @@
 - [btop](https://github.com/aristocratos/btop)
 - [Hyprland](https://github.com/hyprwm/Hyprland)
 - [Yazi](https://github.com/sxyazi/yazi)
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=arch,debian,mint,bash,md,neovim,notion,obsidian&perline=4" />
+  </a>
+</p>
 
 🌮 Other interests:
 - History, mainly Antiquity and Middle Ages

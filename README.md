@@ -19,8 +19,9 @@
 - 🌱 I’m currently learning:
   - GBD (intermediate)
   - Test-Driven Development (intermediate)
-  - Python asynchronous tasks (basics)
+  - Python asynchronous tasks (intermediate)
   - Go language (basics)
+  - Rust (basics)
 
 [![My Skills](https://skillicons.dev/icons?i=arch,debian,mint,ubuntu,bash)](https://skillicons.dev)
 
@@ -63,8 +64,12 @@
 
 ❤️ Software I love:
 - Arch Linux (btw)
+- [kitty](https://github.com/kovidgoyal/kitty)
+- [tmux](https://github.com/tmux/tmux/wiki)
+- [NeoVim](https://neovim.io)
+- [btop](https://github.com/aristocratos/btop)
+- [Hyprland](https://github.com/hyprwm/Hyprland)
 - [Yazi](https://github.com/sxyazi/yazi)
-- [Eza](https://github.com/eza-community/eza)
 
 🌮 Other interests:
 - History, mainly Antiquity and Middle Ages
